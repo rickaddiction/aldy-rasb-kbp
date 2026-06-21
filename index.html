@@ -141,7 +141,8 @@
       0 1px 0 rgba(200,146,42,0.25) inset;
     position: relative;
     text-decoration: none;
-    cursor: pointer;
+    /* frame is an image container only; remove pointer cursor so it doesn't look like a button */
+    cursor: default;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .frame:hover {
@@ -251,10 +252,11 @@
 <body>
 
   <div class="top-bar">
-    <div class="brand">Aldy <span>Ardinata</span></div>
-    <a href="https://wa.me/628986445214" class="wa-button" target="_blank">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.[...]
-      WhatsApp
+    <div class="brand">Aldy <span>Ardiwinata</span></div>
+    <a href="https://wa.me/628986445214" class="wa-button" target="_blank" rel="noopener noreferrer">
+      <!-- WhatsApp logo + label -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.37 0 .08 5.29.08 11.92c0 2.1.55 4.15 1.6 5.95L0 24l6.36-1.66c1.7.92 3.6 1.4 5.64 1.4 6.63 0 11.92-5.29 11.92-11.92 0-3.19-1.24-6.19-3.4-8.14zM12 21.82c-1.9 0-3.77-.52-5.38-1.51l-.38-.23-3.78.98.99-3.69-.25-.38A9.49 9.49 0 0 1 2.5 11.92C2.5 7.1 6.16 3.44 11 3.44c2.54 0 4.92.97 6.71 2.74A9.4 9.4 0 0 1 20.5 11.9c0 5.2-4.2 9.92-8.5 9.92zM17.2 14.06c-.24-.12-1.41-.7-1.63-.78-.22-.08-.38-.12-.55.13-.16.25-.62.75-.76.9-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.64-1.18-1.42-1.31-1.66-.13-.24-.01-.37.11-.49.12-.12.27-.32.41-.48.14-.16.19-.28.28-.48.09-.2.05-.36-.02-.49-.07-.13-.55-1.34-.76-1.86-.2-.48-.41-.41-.56-.42l-.48-.01c-.16 0-.41.06-.63.3-.22.24-.84.82-.84 2 0 1.18.86 2.33.98 2.49.12.16 1.7 2.6 4.12 3.64 2.43 1.04 2.43.69 2.87.65.45-.04 1.41-.57 1.61-1.12.2-.54.2-1.01.14-1.12-.06-.11-.22-.17-.46-.29z"/></svg>
+      <span>WhatsApp</span>
     </a>
   </div>
 
@@ -269,13 +271,14 @@
     <!-- PAGE 1: PROFIL -->
     <section class="page" id="page-0">
       <div class="page-label">
-        <div class="page-eyebrow">01 — Perkenalan</div>
+        <div class="page-eyebrow">01 - Perkenalan</div>
         <div class="page-title">Profil Diri</div>
       </div>
-      <div class="frame">
-        <img src="assets/crop-profil.png" alt="Profil Aldy Ardinata - Sales Internship Kota Baru Parahyangan" />
+      <div class="frame" role="img" aria-label="Foto profil Aldy Ardiwinata">
+        <img src="assets/crop-profil.png" alt="Profil Aldy Ardiwinata - Sales Internship Kota Baru Parahyangan" />
       </div>
-      <a href="https://wa.me/628986445214" target="_blank" class="cta-button">Hubungi via WhatsApp</a>
+      <!-- CTA button kept separate from the image/frame -->
+      <a href="https://wa.me/628986445214" target="_blank" class="cta-button" rel="noopener noreferrer">Hubungi via WhatsApp</a>
       <div class="scroll-hint">
         <span>Scroll</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -285,13 +288,13 @@
     <!-- PAGE 2: KATALOG -->
     <section class="page" id="page-1">
       <div class="page-label">
-        <div class="page-eyebrow">02 — Pilihan Hunian</div>
+        <div class="page-eyebrow">02 - Pilihan Hunian</div>
         <div class="page-title">Katalog Produk</div>
       </div>
-      <div class="frame">
+      <div class="frame" role="img" aria-label="Katalog produk hunian">
         <img src="assets/crop-katalog.png" alt="Katalog rumah Tatar Wangsakerta, Bungawari, Surawisesa, Nilapadmi, Jayaprakasa, Kartawijaya" />
       </div>
-      <a href="https://wa.me/628986445214" target="_blank" class="cta-button">Tanya Unit & Harga</a>
+      <a href="https://wa.me/628986445214" target="_blank" class="cta-button" rel="noopener noreferrer">Tanya Unit & Harga</a>
       <div class="scroll-hint">
         <span>Scroll</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -301,14 +304,14 @@
     <!-- PAGE 3: KPR -->
     <section class="page" id="page-2">
       <div class="page-label">
-        <div class="page-eyebrow">03 — Simulasi Pembiayaan</div>
+        <div class="page-eyebrow">03 - Simulasi Pembiayaan</div>
         <div class="page-title">Daftar KPR</div>
       </div>
-      <div class="frame">
+      <div class="frame" role="img" aria-label="Daftar KPR dan simulasi pembiayaan">
         <img src="assets/crop-kpr.png" alt="Daftar bank dan suku bunga KPR terendah, rekomendasi Mandiri, Bank Jakarta, UOB" />
       </div>
-      <a href="https://wa.me/628986445214" target="_blank" class="cta-button">Konsultasi Simulasi KPR</a>
-      <div class="page-footer-note">© 2026 Aldy Ardinata &nbsp;·&nbsp; <span>+62 898-6445-214</span> &nbsp;·&nbsp; @aldy-rasb-kbp</div>
+      <a href="https://wa.me/628986445214" target="_blank" class="cta-button" rel="noopener noreferrer">Konsultasi Simulasi KPR</a>
+      <div class="page-footer-note">© 2026 Aldy Ardiwinata &nbsp;·&nbsp; <span>+62 898-6445-214</span> &nbsp;·&nbsp; @aldy-rasb-kbp</div>
     </section>
 
   </div>
